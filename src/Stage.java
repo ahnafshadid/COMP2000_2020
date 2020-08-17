@@ -1,55 +1,22 @@
-import javax.swing.*;
 import java.awt.*;
 
-public class Stage extends JFrame{
+public class Stage {
+    Grid grid;
+    Actor puppy;
+    Actor lion;
+    Actor rabbit;
 
-    private static String[] args;
-
-  public static void main(String[] args) throws Exception {
-        Main window = new Main();
+    public Stage(){
+        grid = new Grid();
+        puppy = new Puppy(grid.cellAtColRow(0, 0));
+        lion = new Lion(grid.cellAtColRow(0, 18));
+        rabbit = new Rabbit(grid.cellAtColRow(14,3));
     }
-/**
- * Actor
- */
-public class Actor {
-    public void paint( Graphics g){
-        for (int i=10; i<710; i+=35){
-            for (int j=10; j<710; j+=35){
-                g.setColor(Color.WHITE);
-                g.fillRect(i, j, 35, 35);
-                g.setColor(Color.BLACK);
-                g.drawRect(i, j, 35, 35);
 
-        }
-    
-    }
-       
-}
-
-
-public class Rabbit extends Actor {
-    public Rabbit(){
-
+    public void paint(Graphics g, Point mouseLoc){
+        grid.paint(g,mouseLoc);
+        puppy.paint(g);
+        lion.paint(g);
+        rabbit.paint(g);
     }
 }
-
-public class Lion extends Actor {
-    public Lion(){
-
-    }
-}
-
-public class Puppy extends Actor {
-    public Puppy(){
-
-    }
-}
-
-public Main (){
-    
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Canvas canvas = new Canvas();
-        this.setContentPane(canvas);
-        this.pack();
-        this.setVisible(true);
-    }
