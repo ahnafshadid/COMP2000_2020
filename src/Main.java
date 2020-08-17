@@ -1,48 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
-<<<<<<< HEAD
 public class Main extends JFrame{
     
     public static void main(String[] args) throws Exception {
         Main window = new Main();
-=======
-class Main extends JFrame {
-    
-    class App extends JPanel {
-        
-        Grid grid;
-
-        public App() {
-            setPreferredSize(new Dimension(720, 720));
-            grid = new Grid();
-        }
-
-        @Override
-        public void paint(Graphics g) {
-            grid.paint(g, getMousePosition());
-        }
-
-    }
-
-    public static void main(String[] args) throws Exception {
-        Main window = new Main();
-        window.run();
-    }
-
-    private Main() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        App canvas = new App();
-        this.setContentPane(canvas);
-        this.pack();
-        this.setVisible(true);
-    }
-
-    public void run() {
-        while (true) {
-            this.repaint();
-        }
->>>>>>> 107838d3f77372ae27d363979ee598475a276dcd
     }
 
     public class Canvas extends JPanel {
@@ -73,3 +35,7 @@ class Main extends JFrame {
     }
 
 }
+
+
+
+
