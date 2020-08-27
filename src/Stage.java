@@ -20,3 +20,4 @@ public class Stage {
         rabbit.paint(g);
     }
 }
+
